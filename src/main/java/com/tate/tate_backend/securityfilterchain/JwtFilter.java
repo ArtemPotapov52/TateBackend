@@ -33,7 +33,7 @@ public class JwtFilter extends OncePerRequestFilter {
             "/favicon.ico",
             "/api-docs/**",
             "/api-docs/swagger-config",
-            "/tate-api/auth/registr"  // Добавляем сюда путь регистрации — пропускаем без токена
+            "/tate-api/auth/**"  // Добавляем сюда путь регистрации — пропускаем без токена
     };
 
     private final AntPathMatcher pathMatcher = new AntPathMatcher();

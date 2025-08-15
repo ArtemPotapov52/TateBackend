@@ -23,6 +23,18 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
     private final JwtFilter jwtFilter;
 
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//        return http
+//                .csrf(AbstractHttpConfigurer::disable) // Disable CSRF for simplicity in this example
+//                .authorizeHttpRequests(request -> request
+//                        .anyRequest().() // All other requests require authentication
+//                )
+//                .build();
+//    }
+
+
+
 
 
 
@@ -48,7 +60,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
-                //.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
